@@ -26,6 +26,12 @@ tests = [
                 ('PINB', 0x0F)], 
      'iterations': 1} ],
     'expected': [('PORTC',0x08)],
+    },
+    {'description': 'third', 'steps': [ 
+    {'inputs': [('PINA', 0xB7), 
+                ('PINB', 0x03)], 
+     'iterations': 1 } ],
+    'expected': [('PORTC',0x08)],
     }
     ]
 
