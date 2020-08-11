@@ -12,26 +12,33 @@
 #include "simAVRHeader.h"
 #endif
 
+#define A PINA
+#define B PINB
+
 int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0x00; PORTB = 0xFF;
     DDRC = 0xFF; PORTC = 0x00;
-    
-    unsigned char loop = 8, tmpA = PINA, tmpB = PINB, cnt = 3;
 
     /* Insert your solution below */
     while (1) {
+        unsigned char loop = 8;
+        tmpA = A;
+        tmpB = B;
+        unsigned char cnt = 3;
+        
         while (loop >= 0){
-            if (tmpA & 0x01)
+            if ((tmpA & 0x01) == 0x01)
                 cnt++;
             
-            if (tmpB & 0x01)
+            if ((tmpB & 0x01) == 0x01)
                 cnt++;
             
             tmpA = tmpA >> 1;
             tmpB = tmpB >> 1;
             loop--;
         }
+        
         PORTC = cnt;
 
     }
