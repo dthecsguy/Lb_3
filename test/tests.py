@@ -36,3 +36,19 @@ tests = [ {'description': 'first',
     }
     ]
 
+tests = [ 
+    {'description': 'first', 'steps': [ 
+    {'inputs': [('PINA', 0x03), 
+                ('PINB', 0x03)] 
+     'iterations': 1 } ],
+    'expected': [('PORTC',0x04)],
+    },
+    {'description': 'second', 'steps': [ 
+    {'inputs': [('PINA', 0x0F), 
+                ('PINB', 0x0F)], 
+     'iterations': 1} ],
+    'expected': [('PORTC',0x08)],
+    }
+    ]
+
+
