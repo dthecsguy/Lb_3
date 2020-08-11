@@ -22,12 +22,12 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
-        unsigned char loop = 8;
+        unsigned char loop = 9;
         unsigned char tmpA = A;
         unsigned char tmpB = B;
-        unsigned char cnt = 3;
+        unsigned char cnt = 0;
         
-        while (loop >= 0){
+        while (loop >= 1){
             if ((tmpA & 0x01) == 0x01)
                 cnt++;
             
@@ -36,7 +36,7 @@ int main(void) {
             
             tmpA = tmpA >> 1;
             tmpB = tmpB >> 1;
-            loop--;
+            loop= loop - 1;
         }
         
         PORTC = cnt;
