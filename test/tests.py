@@ -17,7 +17,7 @@
 tests = [ 
     {'description': 'first', 'steps': [ 
     {'inputs': [('PINA', 0x03), 
-                ('PINB', 0x03)] 
+                ('PINB', 0x03)], 
      'iterations': 1 } ],
     'expected': [('PORTC',0x04)],
     },
