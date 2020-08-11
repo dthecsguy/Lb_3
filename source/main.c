@@ -22,12 +22,12 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
-        unsigned char loop = 9;
+        unsigned char loop = 8;
         unsigned char tmpA = A;
         unsigned char tmpB = B;
         unsigned char cnt = 0;
         
-        while (loop >= 1){
+        while (loop > 0){
             if ((tmpA & 0x01) == 0x01)
                 cnt++;
             
