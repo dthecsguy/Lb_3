@@ -23,8 +23,8 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
         unsigned char loop = 8;
-        tmpA = A;
-        tmpB = B;
+        unsigned char tmpA = A;
+        unsigned char tmpB = B;
         unsigned char cnt = 3;
         
         while (loop >= 0){
