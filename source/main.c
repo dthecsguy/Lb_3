@@ -21,7 +21,7 @@ int main(void) {
     DDRC = 0xFF; PORTC = 0x00;
 
     /* Insert your solution below */
-    while (1) {
+    /*while (1) {
         unsigned char loop = 8;
         unsigned char tmpA = A;
         unsigned char tmpB = B;
@@ -41,6 +41,6 @@ int main(void) {
         
         PORTC = cnt;
 
-    }
+    }*/
     return 1;
 }
