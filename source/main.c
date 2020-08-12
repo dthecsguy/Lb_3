@@ -23,6 +23,8 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
+        PORTB = 0;
+        PORTC = 0;
         
         PORTB = Ahigh >> 4;
         PORTC = Alow << 4;
