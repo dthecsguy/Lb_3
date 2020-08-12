@@ -12,7 +12,8 @@
 #include "simAVRHeader.h"
 #endif
 
-#define A PINA
+#define inputs (PINA & 0x0F)
+#define low_ind 0x40
 #define B PINB
 
 int main(void) {
@@ -22,24 +23,37 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
-        unsigned char loop = 8;
-        unsigned char tmpA = A;
-        unsigned char tmpB = B;
-        unsigned char cnt = 0;
+        unsigned char tmp = inputs;
+        unsigned char outtie = 0;
         
-        while (loop > 0){
-            if ((tmpA & 0x01) == 0x01)
-                cnt++;
-            
-            if ((tmpB & 0x01) == 0x01)
-                cnt++;
-            
-            tmpA = tmpA >> 1;
-            tmpB = tmpB >> 1;
-            loop = loop - 1;
+        switch (tmp){
+            case 1:
+            case 2: outtie = 0x20 | low_ind;
+                    break;
+            case 3:
+            case 4: outtie = 0x30 | low_ind;
+                    break;
+            case 5:
+            case 6: outtie = 0x38;
+                    break;
+            case 7:
+            case 8:
+            case 9: outtie = 0x3C:
+                    break;
+            case 10:
+            case 11:
+            case 12: outtie = 0x3E;
+                     break;
+            case 13:
+            case 14:
+            case 15: outtie = 0x3F;
+                     break;
+                
+            default: outtie = 0x00;
+                     break;
         }
         
-        PORTC = cnt;
+        PORTC = outtie;
 
     }
     return 1;
