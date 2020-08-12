@@ -13,6 +13,8 @@
 #endif
 
 #define inputs (PINA & 0x0F)
+#define user_inputs (PINA & 0x70)
+#define sb_chk 0x30
 #define low_ind 0x40
 #define B PINB
 
@@ -52,6 +54,9 @@ int main(void) {
             default: outtie = 0x00;
                      break;
         }
+        
+        if (user_inputs == sb_chk)
+            outtie = outtie | 0x80;
         
         PORTC = outtie;
 
