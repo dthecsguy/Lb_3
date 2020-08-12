@@ -34,6 +34,16 @@ tests = [
     {'inputs': [('PINA', 0x02)], 
      'iterations': 1 } ],
     'expected': [('PORTC',0x60)],
+    },
+    {'description': 'fifth', 'steps': [ 
+    {'inputs': [('PINA', 0x3F)], 
+     'iterations': 1 } ],
+    'expected': [('PORTC',0xBF)],
+    },
+    {'description': 'sixth', 'steps': [ 
+    {'inputs': [('PINA', 0x7F)], 
+     'iterations': 1 } ],
+    'expected': [('PORTC',0x3F)],
     }
     ]
 
