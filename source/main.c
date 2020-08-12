@@ -26,8 +26,6 @@ int main(void) {
         PORTB = 0;
         PORTC = 0;
         
-        PORTB = Ahigh >> 4;
-        PORTC = Alow << 4;
 
     }
     return 1;
