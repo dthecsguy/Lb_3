@@ -38,7 +38,7 @@ int main(void) {
                     break;
             case 7:
             case 8:
-            case 9: outtie = 0x3C:
+            case 9: outtie = 0x3C;
                     break;
             case 10:
             case 11:
