@@ -12,53 +12,20 @@
 #include "simAVRHeader.h"
 #endif
 
-#define inputs (PINA & 0x0F)
-#define user_inputs (PINA & 0x70)
-#define sb_chk 0x30
-#define low_ind 0x40
-#define B PINB
+#define A PINA
+#define Ahigh (PINA & 0xF0)
+#define Alow (PINA & 0x0F)
 
 int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
-    DDRB = 0x00; PORTB = 0xFF;
+    DDRB = 0xFF; PORTB = 0x00;
     DDRC = 0xFF; PORTC = 0x00;
 
     /* Insert your solution below */
     while (1) {
-        unsigned char tmp = inputs;
-        unsigned char outtie = 0;
         
-        switch (tmp){
-            case 1:
-            case 2: outtie = 0x20 | low_ind;
-                    break;
-            case 3:
-            case 4: outtie = 0x30 | low_ind;
-                    break;
-            case 5:
-            case 6: outtie = 0x38;
-                    break;
-            case 7:
-            case 8:
-            case 9: outtie = 0x3C;
-                    break;
-            case 10:
-            case 11:
-            case 12: outtie = 0x3E;
-                     break;
-            case 13:
-            case 14:
-            case 15: outtie = 0x3F;
-                     break;
-                
-            default: outtie = 0x00;
-                     break;
-        }
-        
-        if (user_inputs == sb_chk)
-            outtie = outtie | 0x80;
-        
-        PORTC = outtie;
+        PORTB = Ahigh >> 4;
+        PORTC = Alow << 4;
 
     }
     return 1;
