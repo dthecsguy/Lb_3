@@ -36,7 +36,7 @@ int main(void) {
             
             tmpA = tmpA >> 1;
             tmpB = tmpB >> 1;
-            loop= loop - 1;
+            loop = loop - 1;
         }
         
         PORTC = cnt;
