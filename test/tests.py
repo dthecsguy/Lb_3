@@ -16,34 +16,24 @@
 # altered in between executions (unless preconditions are used).
 tests = [ 
     {'description': 'first', 'steps': [ 
-    {'inputs': [('PINA', 0x09)], 
+    {'inputs': [('PINA', 0xF9)], 
      'iterations': 1 } ],
-    'expected': [('PORTC',0x3C)],
+    'expected': [('PORTB',0x0F),('PORTC',0x90)],
     },
     {'description': 'second', 'steps': [ 
-    {'inputs': [('PINA', 0x0F)], 
+    {'inputs': [('PINA', 0xBC)], 
      'iterations': 1} ],
-    'expected': [('PORTC',0x3F)],
+    'expected': [('PORTB',0x0B),('PORTC',0xC0)],
     },
     {'description': 'third', 'steps': [ 
-    {'inputs': [('PINA', 0x0A)], 
+    {'inputs': [('PINA', 0x11)], 
      'iterations': 1 } ],
-    'expected': [('PORTC',0x3E)],
+    'expected': [('PORTB',0x01),('PORTC',0x10)],
     },
     {'description': 'fourth', 'steps': [ 
-    {'inputs': [('PINA', 0x02)], 
+    {'inputs': [('PINA', 0x16)], 
      'iterations': 1 } ],
-    'expected': [('PORTC',0x60)],
-    },
-    {'description': 'fifth', 'steps': [ 
-    {'inputs': [('PINA', 0x3F)], 
-     'iterations': 1 } ],
-    'expected': [('PORTC',0xBF)],
-    },
-    {'description': 'sixth', 'steps': [ 
-    {'inputs': [('PINA', 0x7F)], 
-     'iterations': 1 } ],
-    'expected': [('PORTC',0x3F)],
+    'expected': [('PORTB',0x01),('PORTC',0x60)],
     }
     ]
 
